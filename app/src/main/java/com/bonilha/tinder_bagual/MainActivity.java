@@ -1,5 +1,6 @@
 package com.bonilha.tinder_bagual;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -48,14 +49,14 @@ public class MainActivity extends AppCompatActivity {
             public void onSwipeLeft() {
                 super.onSwipeLeft();
                 if(contador == 4){
-                    String msg = "Você acertou\n" + pontos + " perguntas!";
-                    tvSwipe.setText(msg);
-//                    AlertDialog.Builder alerta = new AlertDialog.Builder(getBaseContext());
-//                    alerta.setIcon(android.R.drawable.ic_dialog_alert);
-//                    alerta.setTitle("Atenção!");
-//                    alerta.setMessage("Você acertou " + pontos + " perguntas!");
-//                    alerta.setPositiveButton("OK", null);
-//                    alerta.show();
+//                    String msg = "Você acertou\n" + pontos + " perguntas!";
+//                    tvSwipe.setText(msg);
+                    AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);
+                    alerta.setIcon(android.R.drawable.ic_dialog_alert);
+                    alerta.setTitle("Atenção!");
+                    alerta.setMessage("Você acertou " + pontos + " perguntas!");
+                    alerta.setPositiveButton("OK", null);
+                    alerta.show();
                 }else {
                     contador++;
                     tvSwipe.setText(perguntas[contador]);
