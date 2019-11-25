@@ -6,16 +6,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
 
-    private ConstraintLayout tela ;
+    private ConstraintLayout tela;
     private TextView tvSwipe;
     private int contador;
     private int pontos;
-    private String[] perguntas = {"O céu é azul?","Laranja é uma fruta\n cítrica?","Mickey é um cachorro?","O planeta tem dois continentes?","Abacaxi é um legume?"};
-    private String[] respostas = {"s","s","n","n","n"};
+    private String[] perguntas = {"Prenda que dança chula, é Bagual?","Prenda faz carreiteiro de charque, é Bagual?","Prenda dançante, é Bagual?","Prenda de barba, é Bagual?","Prenda com bafo, é Bagual?"};
+    private String[] respostas = {"s","s","s","n","n"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
                 if(contador == 4){
                     String msg = "Você acertou\n" + pontos + " perguntas!";
                     tvSwipe.setText(msg);
+//                    AlertDialog.Builder alerta = new AlertDialog.Builder(getBaseContext());
+//                    alerta.setIcon(android.R.drawable.ic_dialog_alert);
+//                    alerta.setTitle("Atenção!");
+//                    alerta.setMessage("Você acertou " + pontos + " perguntas!");
+//                    alerta.setPositiveButton("OK", null);
+//                    alerta.show();
                 }else {
                     contador++;
                     tvSwipe.setText(perguntas[contador]);
